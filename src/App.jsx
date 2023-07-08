@@ -5,6 +5,7 @@ import './App.css'
 import SideBar from './components/SideBar'
 import Cards from './components/Cards'
 import Feed from './components/Feed'
+import Table from './components/Table'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,10 +15,12 @@ function App() {
   },
   {
     money:299762,
-    desc:"Spent month to-date"
+    desc:"Spent month to-date",
+    color:'#cfe2f3'
   },{
     money:2874582,
-    desc:"Forecasted till month end"
+    desc:"Forecasted till month end",
+    color:'#d6ead1'
   }
 ]
 
@@ -41,7 +44,7 @@ const approvalData=[
     BucketName:"ACME Corp",
     CurrentBudget:"$ 200,000",
     RequestedBudget:"$ 250,000",
-    RequestedBy:"Joe Hilfinger"
+    RequestedBy:"Joe Hilfinger",
   }
 ]
 
@@ -51,10 +54,14 @@ const memberBucketData=[{
   Spend:"$ 173,762",
   Forecast:"$ 205,049"
 }]
+
+
   return (
-    <main className='w-screen flex gap-8'>
-      <SideBar />
-      <Feed cardData={cardData}/>
+    <main className='w-screen flex gap-44'>
+      <SideBar/>
+      <Feed cardData={cardData} bucketsData={bucketsData} approvalData={approvalData}
+      memberBucketData={memberBucketData}/>
+      
     </main>
   )
 }

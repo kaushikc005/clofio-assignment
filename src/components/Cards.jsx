@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Cards = ({data}) => {
+const Cards = ({ data }) => {
+
   return (
-    <section className='border border-black rounded-md w-64 flex flex-col items-center p-2'> 
-        <p className='text-lg font-semibold'>${data.money}</p>
-        <p>{data.desc}</p>
-        
+    <section className={` bg-[${data.color}]
+      border border-black rounded-lg w-64 flex flex-col items-center p-2 pt-4 pb-4`}>
+      <p className="text-lg font-bold">${data.money}</p>
+      <p className="text-lg">{data.desc}</p>
     </section>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;
